@@ -1,8 +1,8 @@
 import sys
 import math
 
-DIVISION = 100.0
-CYCLE = 5
+DIVISION = 1000.0
+CYCLE = 10
 
 # TODO
 # 2. determine du from length of ellipse
@@ -33,7 +33,7 @@ def draw(argv=None):
     filename = argv[1]
     a = float(argv[2])
     b = float(argv[3])
-    du = 0.01
+    du = circumference(a, b) / DIVISION
 
     with open(filename, 'w') as out_file:
         print >> out_file, '#x\ty'
