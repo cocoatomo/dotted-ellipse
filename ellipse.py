@@ -36,6 +36,7 @@ def draw(argv=None):
     du = circumference(a, b) / DIVISION
 
     with open(filename, 'w') as out_file:
+        print >> out_file, 'plot "-" w l'
         print >> out_file, '#x\ty'
         for i, coord in enumerate(coordinate(du, a, b)):
             i %= CYCLE * 2
@@ -43,7 +44,9 @@ def draw(argv=None):
                 print >> out_file, '{0}\t{1}'.format(*coord)
             else:
                 print >> out_file, ''
-                
+        print >> out_file, 'end'
+        print >> out_file, 'pause -1'
+
 
 if __name__ == '__main__':
     draw(sys.argv)
