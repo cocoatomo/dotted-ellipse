@@ -4,9 +4,6 @@ import math
 DIVISION = 1000.0
 CYCLE = 10
 
-# TODO
-# 2. determine du from length of ellipse
-
 def angles(du, a, b):
     phi = 0
     while phi <= 2 * math.pi:
