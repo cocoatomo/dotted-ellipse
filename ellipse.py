@@ -5,19 +5,29 @@ DIVISION = 1000.0
 CYCLE = 10
 
 def angles(du, a, b):
+    """Yeild angles of points on a ellipse.
+
+    @param du - distance of two points which is next to each other
+    @param a, b - length of two semi-axes
+    """
     phi = 0
     while phi <= 2 * math.pi:
         yield phi
         phi += du / math.sqrt((a * math.sin(phi))**2 + (b * math.cos(phi))**2)
 
 def coordinate(du, a, b):
+    """Yeild coordinates of points on a ellipse.
+
+    @param du - distance of two points which is next to each other
+    @param a, b - length of two semi-axes
+    """
     for angle in angles(du, a, b):
         yield (a * math.cos(angle), b * math.sin(angle))
 
 def circumference(a, b):
     """Return a length of a circumference of an ellipse.
 
-    @param a, b length of two semi-axes
+    @param a, b - length of two semi-axes
 
     reference: http://en.wikipedia.org/wiki/Ellipse#Circumference
     """
